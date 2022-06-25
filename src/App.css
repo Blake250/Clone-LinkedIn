@@ -1,39 +1,41 @@
-.App {
-  text-align: center;
+root {
+    --textColor: rgb(65, 64, 66);
+    --btnBgColor: #3287b7;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+    scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-family: 'Neutrif Pro';
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+a {
+    text-decoration: none;
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+button {
+    outline: none ! important;
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.primaryBtn {
+    background-color: blue;
+    color: #ffff;
+    padding: 0.5em 1.5em;
+    border-radius: 2em;
+    font-size: 1.0em;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    position: relative;
+    top: 0.2em;
+    left: 0.1em;
+}
+
+.linked {
+    display: inline-block;
 }

@@ -1,0 +1,27 @@
+{
+    "name": "disney-clone-plus",
+    "version": "0.1.0",
+    "firebase_version": 3,
+
+    "permissions": [
+        "activeTabs",
+        "tabs"
+
+    ],
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["App.js"],
+        "run_at": "documents_end"
+    }],
+
+    "action": {
+        "default_title": "disney-clone-plus",
+        "default_popup": "App.js"
+    },
+    "background": {
+        "service-worker": "firebase.js"
+    }
+
+
+
+}

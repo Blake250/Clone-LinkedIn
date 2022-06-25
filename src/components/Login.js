@@ -1,0 +1,288 @@
+import styled from "styled-components";
+import {connect} from "react-redux";
+import { Navigate } from "react-router-dom";
+import  signInApI from "../action";
+
+
+
+
+const Login = (props) => {
+  
+  return (
+    <Container>
+      {
+        props.user &&
+        <Navigate to={"/home"}/>
+      }
+      <Nav>
+        <a href="/">
+          <img  src="/images/login-logo.svg" alt=""/>
+        </a>
+        <div>
+          <Join>Join Now</Join>
+          <SignIn>Sign in</SignIn>
+        </div>
+      </Nav>
+      <Section>
+        <Home>
+          <h1>Welcome to your professional community</h1>
+          <img src="/images/home-page.jpg" alt="" />
+        </Home>
+      </Section>
+      <Form>
+        <Google onClick={()=> props.signIn()}>
+          <img src="/images/google.svg" alt="" />
+          Sign in with Google
+        </Google>
+      </Form>
+    </Container>
+
+  )
+
+  
+  
+}
+
+    const mapStateToProps = (state) =>{
+      return {
+        user : state.userState.user
+      }
+    
+  }
+  const mapDispatchToProps = (dispatch) =>({
+    signIn : () => dispatch(signInApI()),
+  })
+  
+  
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
+
+
+const Nav = styled.nav`
+
+max-width:1128px;
+margin:auto;
+padding : 12px 0 16px;
+display: flex;
+align-items: center;
+position: relative;
+justify-content: space-between;
+flex-wrap : nowrap;
+& > a > img{
+  width: 135px;
+  height : 39px;
+  
+  @media (max-width: 760px){
+    padding : 9px 0.5px;
+    
+    
+  }
+}
+`
+const Container = styled.div`
+padding: 0;
+overflow:hidden;
+`
+
+const Join = styled.a`
+
+  font-size:16px;
+padding : 11px 12px;
+text-decoration: none;
+color : rgba(0, 0, 0, 0.6);
+margin-right : 12px;
+span{
+  font-weight: 600;
+}
+
+
+&:hover > span{
+   background-color : rgba(0, 0, 0, 0.08);
+  color : hsla(0, 0%, 0%, 0.9);
+  text-decoration : none;
+  border-radius: 4px 4px;
+  text-decoration:none !important;
+ 
+}
+`
+const SignIn = styled.a`
+
+  position: relative;
+top: 0;
+bottom : 3px;
+right: 4px;
+box-shadow : inset 0 0 1px #0a66c2;
+color: #0a66c2 ;
+border-radius : 24px;
+transition-duration : 167ms;
+font-size : 16px;
+font-weight : 600;
+line-height: 40px;
+text-align: center;
+padding : 10px 24px;
+text-decoration: none !important;
+background-color: rgba(0, 0, 0, 0,);
+
+&:hover {
+  background-color : rgba(112, 181, 249, 0.15);
+  color : #0a66c2;
+  text-decoration : none;
+  
+}
+
+
+
+
+
+
+`
+const Section = styled.section`
+display: flex;
+align-content: center;
+min-height: 700px;
+padding-bottom: 138px;
+padding-top: 40px;
+padding: 60px 0;
+max-width: 1128px;
+width: 100%;
+align-items: center;
+margin: auto;
+flex-wrap: wrap;
+position: relative;
+  bottom: 360px;
+  left:0;
+@media (max-width: 768px) {
+  margin: auto;
+  min-height: 60px;
+
+  
+};
+img{
+  z-index: -1;
+   width: 840px;
+ height:800px;
+ position: absolute ;
+ 
+ top: 430px;
+ right: 130px;
+ left: 470px;
+
+
+ @media (max-width: 768px) {
+  
+   width: 400px ;
+   height: 500px;
+   position: absolute;
+   left: 50px;
+    top: 350px;
+   
+
+ }
+}
+`
+const Home = styled.div`
+
+  
+
+  padding-bottom: 0;
+  width:100%;
+  color: #0a66c0;
+ /*  font-size:56px;
+ font-weight: 600;
+  line-height: 70%;
+  text-align: center;*/
+   
+ 
+  
+  h1{
+  padding-top: 280px;
+     
+    font-size:56px;
+    line-height: 1;
+  
+    font-weight: 400;
+    bottom: 60px; 
+    width:55%;
+      
+  } 
+  @media (max-width: 768px) {
+  width:100%;
+  margin-top:12px;
+     
+     h1{  margin-bottom:60px;
+       text-align:center;
+       font-size:30px;
+       line-height:1;
+       width:100%;
+       
+     }
+  
+    } 
+
+
+
+
+`
+const Form = styled.div`
+margin-top: 100px;
+width: 500px;
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+
+bottom: 400px;
+
+
+height: 50px;
+@media (max-width: 760px) {
+  margin-top: 20px
+  
+}
+
+`
+
+const Google = styled.button`
+position: absolute;
+bottom: 160px;
+right: -87px;
+border-radius: 28px;
+width:400px;
+background-color:#e9edf5;
+height: 47px;
+text-align: center;
+
+
+box-shadow: inset 0 0 0 1px rgb(0 0 0 / 60%), 
+inset 0 0 0 2px rgb(0 0 0 / 0%) inset 0 0 0 1px rgb(0 0 0 / 0%);
+z-index: 0;
+transition-duration: 167ms;
+font-size: 20px;
+color: rgba(0, 0, 0, 0.6);
+&:hover{
+  background-color: rgba(207, 207, 207, 0.25)
+}
+
+
+@media (max-width: 768px) {
+  
+ position: relative;
+  top: 330px;
+  left:0;
+  
+  
+}
+
+`
+
+
+
+
+  
+
+
+
+
+
+
