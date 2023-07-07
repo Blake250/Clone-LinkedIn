@@ -12,6 +12,8 @@ body {
     padding: 0;
     font-size: 1em;
     font-family: 'Neutrif Pro';
+    overflow-x: hidden;
+    background-color : rgba(0, 0, 0, 0.08) !important;
 }
 
 a {

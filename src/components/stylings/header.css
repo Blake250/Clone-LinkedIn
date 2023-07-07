@@ -1,0 +1,52 @@
+
+.added:hover.recent{
+    background-color: whitesmoke;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.header{
+
+    display: flex;
+}
+
+.header_left{
+    display: flex;
+}
+
+.header_left > img{
+    object-fit: contain;
+   height: 40px;
+   margin-right: 10px;
+ 
+} 
+
+.header_search{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+   color: gray;
+   color: rgba(0, 0, 0, 0.9);
+   background-color: #eef3f8;
+   
+}
+
+.header_search > input{
+    outline: none;
+    border: none;
+    background: none;
+}*/

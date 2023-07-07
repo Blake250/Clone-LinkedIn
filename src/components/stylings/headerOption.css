@@ -1,0 +1,19 @@
+.headerOption{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+    cursor: pointer;
+ 
+}
+
+.headerOption_icon:hover{
+    background-color: blue !important;
+    z-index: 5;
+    position: relative;
+}
+
+.Btn{
+    background-color: black;
+}

@@ -1,11 +1,12 @@
 import { auth } from "..firebase"
 import { setUser } from "./index"
+import { onAuthStateChanged } from "firebase/auth"
 
-export default function getUserAuth() {
+export function getUserAuth() {
     return (dispatch) => {
-        auth.onAuthStateChanged(async(user) => {
+        onAuthStateChanged(auth,(user) => {
             if (user) {
-                dispatch(setUser(user))
+                dispatch(user)
             }
         })
     }

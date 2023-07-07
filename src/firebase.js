@@ -1,34 +1,57 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/firestore';
-import 'firebase/compat/auth';
+// Import the functions you need from the SDKs you need
+// Initialize Firebase
 
-import 'firebase/compat/storage';
+import { initializeApp } from "firebase/app";
+
+import { getFirestore } from "firebase/firestore";
+import { getAuth,GoogleAuthProvider } from "firebase/auth";
+//import { GoogleAuthProvider } from "firebase/auth";
+import { getStorage } from "firebase/storage";
 
 
 
 
 
 
+
+
+// Your web app's Firebase configuration
+// Import the functions you need from the SDKs you need
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCEBMdZQ7NiAYLqUZrxov824reD9EKFSIk",
-    authDomain: "linkedin-clone-51e32.firebaseapp.com",
-    projectId: "linkedin-clone-51e32",
-    storageBucket: "linkedin-clone-51e32.appspot.com",
-    messagingSenderId: "222916978198",
-    appId: "1:222916978198:web:db0c57a65490f34cd8b737",
-    measurementId: "G-4YDQ8QDYPK"
+  apiKey: "AIzaSyA-TIyFCb6JGdEUR-Xz3PCqoKvhnb3vyYc",
+  authDomain: "disney-clone-8d1c7.firebaseapp.com",
+  projectId: "disney-clone-8d1c7",
+  storageBucket: "disney-clone-8d1c7.appspot.com",
+  messagingSenderId: "564120857390",
+  appId: "1:564120857390:web:8beee1914766176b5de8bf"
 };
 
+// Initialize Firebase
+//const app = initializeApp(firebaseConfig);
+// Initialize Firebase
 
 
 
-const firebaseApp = firebase.initializeApp(firebaseConfig)
 
-const auth = firebase.auth();
-const db = firebaseApp.firestore();
-const storage = firebase.storage();
-const provider = new firebase.auth.GoogleAuthProvider();
+
+
+
+
+const firebaseApp = initializeApp(firebaseConfig)
+
+ const auth = getAuth(firebaseApp);
+
+ const db = getFirestore(firebaseApp);
+
+ const storage = getStorage(firebaseApp);
+
+const provider = new GoogleAuthProvider(firebaseApp);
 
 
 export { auth, storage, provider };
-export default db
+export default db;
